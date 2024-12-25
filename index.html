@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Noël - Matrix Style</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="matrix">
+        <canvas id="matrix"></canvas>
+        <div class="message">
+            <h1 class="neon">🎅JOYEUX NOËL 2024🎄</h1>
+            <div class="pills">
+                <div class="pill red" onclick="choosePill('red')"> Red</div>
+                <div class="pill blue" onclick="choosePill('blue')">Blue</div>
+            </div>
+            <div id="result"></div>
+            <p class="instruction">Attrapez le flocon de neige pour accéder à GitHub !</p>
+            <a href="https://github.com/votre-utilisateur/votre-repo" target="_blank">
+                <button id="catchButton" class="snowflake">Attrapez-moi !</button>
+            </a>
+          </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>

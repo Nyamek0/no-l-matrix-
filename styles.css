@@ -1,0 +1,167 @@
+/* Importation de la police futuriste */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Orbitron', monospace;
+  background: black;
+}
+
+.matrix {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #001a00; /* Vert Matrix foncé */
+  background: linear-gradient(to bottom, #003300, #001a00); /* Gradient vert Matrix */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, #003300, #001a00); /* Fond vert Matrix */
+}
+
+/* Message principal */
+.message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+}
+
+.neon {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white;
+  animation: neon-blink 1.5s infinite alternate;
+}
+
+@keyframes neon-blink {
+  from {
+    text-shadow: 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  }
+  to {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white;
+  }
+}
+
+/* Pilules */
+.pills {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.pill {
+  padding: 20px 40px;
+  border-radius: 100px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.pill.red {
+  background: #ff0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.pill.blue {
+  background: #0000ff;
+  box-shadow: 0 0 20px #0000ff;
+}
+
+.pill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px currentColor;
+}
+
+/* Résultat après choix */
+#result {
+  margin-top: 30px;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white;
+}
+
+/* Ajout de styles pour rendre le projet responsive */
+@media (max-width: 768px) {
+    .matrix {
+        width: 100%;
+        height: auto;
+    }
+
+    .message {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .pill {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    h1.neon {
+        font-size: 2em; /* Ajustez la taille de la police pour les petits écrans */
+    }
+}
+
+/* Ajout de styles pour les téléphones */
+@media (max-width: 480px) {
+    .matrix {
+        height: 100vh; /* Utiliser toute la hauteur de l'écran */
+    }
+
+    .message {
+        padding: 10px;
+    }
+
+    .pill {
+        width: 90%; /* Largeur des pilules pour les petits écrans */
+        font-size: 1.2em; /* Augmenter la taille de la police pour une meilleure lisibilité */
+    }
+
+    h1.neon {
+        font-size: 1.5em; /* Ajustement de la taille de la police pour les petits écrans */
+    }
+}
+
+/* Styles pour le flocon de neige */
+.snowflake {
+    background-color: white; /* Couleur de fond blanche */
+    border: none; /* Pas de bordure */
+    border-radius: 50%; /* Forme ronde */
+    width: 50px; /* Largeur du flocon */
+    height: 50px; /* Hauteur du flocon */
+    position: absolute; /* Positionnement absolu */
+    cursor: pointer; /* Curseur en forme de main */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Ombre pour un effet lumineux */
+    font-size: 0; /* Masquer le texte */
+}
+
+/* Ajout d'une image de flocon de neige en arrière-plan */
+.snowflake::before {
+    content: '❄️'; /* Utilisation d'un emoji flocon de neige */
+    font-size: 30px; /* Taille de l'emoji */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer l'emoji */
+}
+
+/* Styles pour le texte d'instruction */
+.instruction {
+    text-align: center; /* Centrer le texte */
+    font-size: 1.2em; /* Taille de la police */
+    color: #ffffff; /* Couleur du texte */
+    margin-top: 80px; /* Espacement au-dessus du texte */
+}

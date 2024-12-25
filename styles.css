@@ -165,26 +165,3 @@ canvas {
     color: #ffffff; /* Couleur du texte */
     margin-top: 80px; /* Espacement au-dessus du texte */
 }
-
-/* Ajoutez ces styles pour améliorer la réactivité */
-@media (max-width: 600px) {
-    .matrix {
-        width: 100%;
-        height: auto;
-    }
-    .message {
-        padding: 10px;
-        text-align: center;
-    }
-    .neon {
-        font-size: 24px; /* Ajustez la taille de la police pour les petits écrans */
-    }
-    .pills {
-        display: flex;
-        flex-direction: column; /* Empilez les pilules verticalement */
-        align-items: center;
-    }
-    .pill {
-        margin: 5px 0; /* Ajoutez un espacement entre les pilules */
-    }
-}
